@@ -11,24 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Movie Name' %>
   </div>
-  <div class="field">
-    <%= f.label :genre_id %><br>
-    <%= f.text_field :genre_id %>
+  <div class="form-group">
+    <%= f.collection_select :genre_id, @genres, :id, :name, {:include_blank => 'Select a genre'}, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :actor_id %><br>
-    <%= f.text_field :actor_id %>
+  <div class="form-group">
+    <%= f.collection_select :actor_id, @actors, :id, :name, {:include_blank => 'Select an Actor'}, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.text_field :image, class: 'form-control', placeholder: 'Link to Movie Poster' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-default' %>
   </div>
 <% end %>
 
